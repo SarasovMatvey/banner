@@ -8,6 +8,10 @@
   outline: none;
 }
 
+*:focus {
+  opacity: 0.8;
+}
+
 body {
   min-width: 992px;
   margin: 0;
@@ -29,24 +33,34 @@ body {
 
 .banner .container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
 .banner__info {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   flex-shrink: 0;
 }
 
-.banner__info-inner {
-  max-width: 265px;
-}
-
-.banner__info-ticket {
+.banner__info:before {
+  content: '';
   margin-right: 25px;
   width: 144px;
   height: 144px;
-  object-fit: contain;
+  background: url('../img/icons/ticket.svg') center / contain no-repeat;
+}
+
+.banner__info:after {
+  content: '';
+  width: 160px;
+  height: 160px;
+  background: url('../img/icons/arrow.svg') center / contain no-repeat;
+}
+
+.banner__info-inner {
+  max-width: 265px;
 }
 
 .banner__info-title {
@@ -99,6 +113,9 @@ body {
   color: #f23c37;
   font-size: 22px;
 }
+.banner__info-tel:hover {
+  color: #bd3530;
+}
 
 .banner__info-tel:after {
   content: '';
@@ -109,6 +126,9 @@ body {
   height: 1px;
   background: #f23c37;
 }
+.banner__info-tel:hover:after {
+  background: #bd3530;
+}
 
 .banner__form-block {
   margin-left: 30px;
@@ -118,6 +138,7 @@ body {
   margin: 0;
   margin-bottom: 14px;
   font-size: 16px;
+  font-weight: 600;
 }
 
 .banner__form {
@@ -139,6 +160,10 @@ body {
   color: #e3e3e3;
 }
 
+.banner__form-field:focus ~ legend {
+  color: #fff;
+}
+
 .banner__form-field {
   position: absolute;
   left: 0;
@@ -155,6 +180,10 @@ body {
   border: none;
 }
 
+.banner__form-field:focus {
+  opacity: 1;
+}
+
 .banner__form-btn {
   height: 50px;
   background: #d83d38;
@@ -169,10 +198,16 @@ body {
   cursor: pointer;
 }
 
+.banner__form-btn:hover {
+  background: #bd3530;
+}
+
 .banner__form-checkbox {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   cursor: pointer;
+  font-size: 10px;
 }
 
 .banner__form-checkbox input {
