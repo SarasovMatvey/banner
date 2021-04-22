@@ -9,13 +9,13 @@
 }
 
 body {
+  min-width: 992px;
   margin: 0;
 }
 
 .container {
   margin: 0 auto;
   max-width: 1348px;
-  min-width: 992px;
   padding: 0 15px;
 }
 
@@ -182,6 +182,7 @@ body {
 
 .banner__form-checkbox-toggle {
   position: relative;
+  flex-shrink: 0;
   margin-right: 11px;
   width: 14px;
   height: 14px;
